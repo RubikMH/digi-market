@@ -20,6 +20,17 @@ export default function index({
         width: 100%;
         height: 1.6rem;
         direction: ${dir};
+        background: white;
+        border: 1px double #ddd;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #333;
+        color: #666;
+        outline: none;
+        height: 30px;
+        // width: 275px;
+        &:placeholder {
+          direction: rtl;
+        }
       `}
       onChange={handelOnChange}
     />

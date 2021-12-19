@@ -50,9 +50,9 @@ export default function Login() {
       >
         <img
           className={css`
-            height: 350px;
+            height: 300px;
           `}
-          src="Logo.png"
+          src="Logo.jpg"
           alt="img_login"
         />
 

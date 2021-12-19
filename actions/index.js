@@ -1,4 +1,5 @@
 import actionTypes from "../configs/actionTypes";
+import fetchUrl from "../utils/fetchUrl";
 
 const LOGIN_ACTION = () => {
     return async(dispatch) => {
@@ -10,8 +11,10 @@ const LOGIN_ACTION = () => {
         });
         try {
             setTimeout(async() => {
-                const response = await fetch("http://127.0.0.1:5000/login.json");
-                const { user } = await response.json();
+                const { user } = await fetchUrl({
+                    url: "http://127.0.0.1:5000/login.json",
+                    method: "GET",
+                });
                 dispatch({
                     type: actionTypes.LOGIN_SUCCES,
                     logged: true,
