@@ -1,37 +1,37 @@
 {
-  "name": "remote-job",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "dependencies": {
-    "@emotion/core": "^11.0.0",
-    "@emotion/css": "^11.5.0",
-    "@emotion/react": "^11.7.0",
-    "emotion-theming": "^11.0.0",
-    "next": "12.0.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-error-boundary": "^3.1.4",
-    "react-redux": "^7.2.6",
-    "redux": "^4.1.2",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.16.0",
-    "@storybook/addon-actions": "^6.4.8",
-    "@storybook/addon-essentials": "^6.4.8",
-    "@storybook/addon-links": "^6.4.8",
-    "@storybook/react": "^6.4.8",
-    "babel-loader": "^8.2.3",
-    "eslint": "7.32.0",
-    "eslint-config-next": "12.0.4",
-    "eslint-plugin-storybook": "^0.5.3"
-  }
+    "name": "digi-market",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
+    },
+    "dependencies": {
+        "@emotion/core": "^11.0.0",
+        "@emotion/css": "^11.5.0",
+        "@emotion/react": "^11.7.0",
+        "emotion-theming": "^11.0.0",
+        "next": "12.0.4",
+        "react": "17.0.2",
+        "react-dom": "17.0.2",
+        "react-error-boundary": "^3.1.4",
+        "react-redux": "^7.2.6",
+        "redux": "^4.1.2",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-thunk": "^2.4.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@storybook/addon-actions": "^6.4.8",
+        "@storybook/addon-essentials": "^6.4.8",
+        "@storybook/addon-links": "^6.4.8",
+        "@storybook/react": "^6.4.8",
+        "babel-loader": "^8.2.3",
+        "eslint": "7.32.0",
+        "eslint-config-next": "12.0.4",
+        "eslint-plugin-storybook": "^0.5.3"
+    }
 }
