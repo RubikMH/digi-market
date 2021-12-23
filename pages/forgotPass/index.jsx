@@ -39,7 +39,7 @@ export default function Login() {
           className={css`
             height: 350px;
           `}
-          src="Logo.png"
+          src="Logo.jpg"
           alt="img_login"
         />
 

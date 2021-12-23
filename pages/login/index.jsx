@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import { css, cx } from "@emotion/css";
@@ -12,6 +12,7 @@ import Space from "../../Component/Typography/Space";
 import HyperLink from "../../Component/Hyperlink/HyperLink";
 import { LOGIN_ACTION } from "../../actions/index";
 import store from "../../configs/store";
+import axios from "axios";
 
 export default function Login() {
   const auth = useSelector((state) => state.login);
@@ -33,6 +34,26 @@ export default function Login() {
     console.log("auth", auth);
   };
 
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      url: "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/regions/list",
+      headers: {
+        "x-rapidapi-host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
+        "x-rapidapi-key": "f87321309fmsh5a252ed43b69baep1f56c2jsn89a38dc9d999",
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    return options;
+  }, []);
   return (
     <>
       <Head>
