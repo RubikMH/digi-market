@@ -5,7 +5,7 @@ const LOGIN_ACTION = () => {
     return async(dispatch) => {
         dispatch({
             type: actionTypes.LOGIN_STARTED,
-            logged: true,
+            logged: false,
             loading: true,
             user: {},
         });

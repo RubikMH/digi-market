@@ -26,7 +26,9 @@ export default function Login() {
     // if sucss
     store.dispatch(LOGIN_ACTION());
 
-    // router.push("/");
+    if (auth.user.email === valueFrom.Email) {
+      router.push("/");
+    }
   };
 
   const handelOnChange = (name, value) => {
@@ -34,26 +36,6 @@ export default function Login() {
     console.log("auth", auth);
   };
 
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/regions/list",
-      headers: {
-        "x-rapidapi-host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
-        "x-rapidapi-key": "f87321309fmsh5a252ed43b69baep1f56c2jsn89a38dc9d999",
-      },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-    return options;
-  }, []);
   return (
     <>
       <Head>
@@ -111,10 +93,15 @@ export default function Login() {
           </FormContorol>
         </form>
         <div>
-          <HyperLink href="/register"> ثبت نام</HyperLink>
+          <HyperLink href="/register" borderBottom>
+            {" "}
+            ثبت نام
+          </HyperLink>
         </div>
         <div>
-          <HyperLink href="/forgotPass">بازیابی کلمه عبور</HyperLink>
+          <HyperLink href="/forgotPass" borderBottom>
+            بازیابی کلمه عبور
+          </HyperLink>
         </div>
       </div>
     </>

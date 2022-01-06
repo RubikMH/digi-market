@@ -1,6 +1,7 @@
-const fetchUrl = async({ url, method = "GET" }) => {
+const fetchUrl = async({ url, method = "GET", body }) => {
     const result = await fetch(url, {
         method,
+        body,
     });
 
     return result.json();

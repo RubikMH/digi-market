@@ -70,10 +70,14 @@ export default function Login() {
           </FormContorol>
         </form>
         <div>
-          <HyperLink href="/login">وارد شوید</HyperLink>
+          <HyperLink href="/login" borderBottom>
+            وارد شوید
+          </HyperLink>
         </div>
         <div>
-          <HyperLink href="/register">ثبت نام</HyperLink>
+          <HyperLink href="/register" borderBottom>
+            ثبت نام
+          </HyperLink>
         </div>
       </div>
     </>
