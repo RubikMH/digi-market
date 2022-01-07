@@ -12,10 +12,12 @@ import Space from "../../Component/Typography/Space";
 import HyperLink from "../../Component/Hyperlink/HyperLink";
 import { LOGIN_ACTION } from "../../actions/index";
 import store from "../../configs/store";
-import axios from "axios";
+import Alert from "../../Component/Alert/Alert";
 
 export default function Login() {
+  const [alert, setAlert] = useState(false);
   const auth = useSelector((state) => state.login);
+  console.log(auth);
   // const dispatch = useDispatch();
   const router = useRouter();
   const [valueFrom, setValueFrom] = useState({});
@@ -26,14 +28,17 @@ export default function Login() {
     // if sucss
     store.dispatch(LOGIN_ACTION());
 
-    if (auth.user.email === valueFrom.Email) {
-      router.push("/");
-    }
+    setTimeout(() => {
+      if (auth.logged) {
+        router.push("/");
+      } else {
+        setAlert(true);
+      }
+    }, 2000);
   };
 
   const handelOnChange = (name, value) => {
     setValueFrom({ ...valueFrom, [name]: value });
-    console.log("auth", auth);
   };
 
   return (
@@ -91,6 +96,7 @@ export default function Login() {
               ارسال
             </Button>
           </FormContorol>
+          <Alert Alert={alert}>ایمیل یا کلمه عبور اشتباه است</Alert>
         </form>
         <div>
           <HyperLink href="/register" borderBottom>
