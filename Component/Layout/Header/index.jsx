@@ -3,10 +3,10 @@ import { css, cx } from "@emotion/css";
 import { useTheme } from "@emotion/react";
 import Button from "../../Button";
 import H1 from "../../Typography/H1";
-import fetchUrl from "../../../utils/fetchUrl";
-import HyperLi from "../../HyperLI/HyperLi";
+import Li from "../../Li/Li";
 import HyperLink from "../../HyperLink/HyperLink";
 import Space from "../../Typography/Space";
+import Navbar from "../../Navabr/Navbar";
 
 const Header = () => {
   const handelMode = (e) => {
@@ -17,39 +17,62 @@ const Header = () => {
 
   return (
     <>
-      <Space />
       <div
         className={css`
           display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-content: center;
+          justify-content: space-between;
+          align-items: center;
           width: 100%;
+          padding-top: 10px;
         `}
       >
-        <div>
-          <ul
+        <div
+          className={css`
+            display: flex;
+            width: 50%;
+          `}
+        >
+          <Navbar />
+        </div>
+        <div
+          className={css`
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-content: center;
+            align-items: baseline;
+          `}
+        >
+          <div
             className={css`
-              display: flex;
-              flex-direction: row;
-              flex-wrap: nowrap;
-              justify-content: center;
-              align-items: center;
+              width: 75px;
+              margin: 10px;
             `}
           >
-            <HyperLink href="/">
-              <HyperLi>خانه</HyperLi>
+            <HyperLink href={`/login`}>
+              <Button primary>ورود </Button>
             </HyperLink>
-            <HyperLink href="/courses">
-              <HyperLi>درهای آموزشی</HyperLi>
+          </div>
+
+          <div
+            className={css`
+              width: 75px;
+              margin: 10px;
+              margin-left: 20px;
+            `}
+          >
+            <HyperLink href={`/register`}>
+              <Button>ثبت نام </Button>
             </HyperLink>
-            <HyperLink href="/blogs">
-              <HyperLi>بلاک ها</HyperLi>
-            </HyperLink>
-            <HyperLink href="/about-us">
-              <HyperLi>درباره ما</HyperLi>
-            </HyperLink>
-          </ul>
+          </div>
         </div>
       </div>
-      <Space />
+
+      <hr />
     </>
   );
 };

@@ -19,7 +19,7 @@ export default function index({
       className={css`
         width: 100%;
         height: 1.6rem;
-        direction: ${dir};
+
         background: white;
         border: 1px double #ddd;
         border-radius: 5px;
@@ -27,10 +27,10 @@ export default function index({
         color: #666;
         outline: none;
         height: 30px;
-        // width: 275px;
-        &:placeholder {
+        ::placeholder {
           direction: rtl;
         }
+        direction: ${dir};
       `}
       onChange={handelOnChange}
     />

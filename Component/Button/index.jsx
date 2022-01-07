@@ -2,7 +2,14 @@ import React from "react";
 import { css, cx } from "@emotion/css";
 import { useTheme } from "@emotion/react";
 
-const Button = ({ type = "button", onSubmit, onClick, children, loading }) => {
+const Button = ({
+  type = "button",
+  onSubmit,
+  onClick,
+  children,
+  loading,
+  primary,
+}) => {
   const theme = useTheme();
   return (
     <div
@@ -13,7 +20,9 @@ const Button = ({ type = "button", onSubmit, onClick, children, loading }) => {
       <button
         className={css`
           width: 100%;
-          background-color: ${theme.colors.primary};
+          background-color: ${primary
+            ? theme.colors.primary
+            : theme.colors.secondary};
           color: white;
           font-size: ${theme.typography.paragraph};
           text-decoration: none;

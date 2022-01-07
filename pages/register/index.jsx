@@ -72,7 +72,6 @@ export default function Login() {
           <FormContorol>
             <InputText
               placeholder="نام خانوادگی خود را وارد کنید "
-              autoFocus={true}
               onChange={(value) => handelOnChange("Family", value)}
             />
           </FormContorol>
@@ -80,7 +79,6 @@ export default function Login() {
           <FormContorol>
             <InputEmail
               placeholder="ایمیل خود را وارد کنید"
-              autoFocus={true}
               onChange={(value) => handelOnChange("Email", value)}
             />
           </FormContorol>
@@ -94,7 +92,9 @@ export default function Login() {
           <Space />
 
           <FormContorol>
-            <Button type="submit">ثبت نام</Button>
+            <Button type="submit" primary>
+              ثبت نام
+            </Button>
           </FormContorol>
         </form>
         <div>
