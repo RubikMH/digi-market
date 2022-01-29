@@ -4,8 +4,13 @@ import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import getApi from "../utils/getApi";
 import { css, cx } from "@emotion/css";
+import store from "../configs/store";
+import { LOAD_COURSES_ACTION } from "../actions";
 
 const Home = () => {
+  useEffect(() => {
+    store.dispatch(LOAD_COURSES_ACTION());
+  }, []);
   return (
     <div
       className={css`
@@ -34,9 +39,9 @@ const Home = () => {
   );
 };
 
-Home.getInitialProps = async ({ reduxStore }) => {
-  // console.log("reduxStore", reduxStore);
-  return {};
-};
+// Home.getInitialProps = async ({ reduxStore }) => {
+//   // console.log("reduxStore", reduxStore);
+//   return {};
+// };
 
 export default Home;

@@ -3,7 +3,7 @@ import { css, cx } from "@emotion/css";
 
 import H1 from "../../Component/Typography/H1";
 
-const about = () => {
+const AboutUS = () => {
   return (
     <div
       className={css`
@@ -16,4 +16,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default AboutUS;

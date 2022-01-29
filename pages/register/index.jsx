@@ -12,7 +12,7 @@ import InputText from "../../Component/InputText/InputText";
 import { useDispatch } from "react-redux";
 import HyperLink from "../../Component/Hyperlink/HyperLink";
 
-export default function Login() {
+const Register = () => {
   const router = useRouter();
   const [valueFrom, setValueFrom] = useState({});
   const handelForm = (e) => {
@@ -105,4 +105,6 @@ export default function Login() {
       </div>
     </>
   );
-}
+};
+
+export default Register;

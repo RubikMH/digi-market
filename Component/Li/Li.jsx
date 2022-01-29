@@ -11,7 +11,7 @@ const Li = ({ children }) => {
         align-items: stretch;
         padding: 5px 15px;
         :hover {
-          background-color: #a4ec4f;
+          background-color: #43cad9;
         }
         border-radius: 13px;
       `}

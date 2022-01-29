@@ -10,7 +10,7 @@ import Space from "../../Component/Typography/Space";
 import Link from "next/link";
 import HyperLink from "../../Component/Hyperlink/HyperLink";
 
-export default function Login() {
+const ForgotPass = () => {
   const [valueFrom, setValueFrom] = useState({});
   const handelForm = (e) => {
     if (e) e.preventDefault();
@@ -84,4 +84,6 @@ export default function Login() {
       </div>
     </>
   );
-}
+};
+
+export default ForgotPass;

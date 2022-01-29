@@ -3,7 +3,7 @@ import { css, cx } from "@emotion/css";
 
 import H1 from "../../Component/Typography/H1";
 
-const blogs = () => {
+const Blogs = () => {
   return (
     <div
       className={css`
@@ -16,4 +16,4 @@ const blogs = () => {
   );
 };
 
-export default blogs;
+export default Blogs;

@@ -28,13 +28,11 @@ export default function Login() {
     // if sucss
     store.dispatch(LOGIN_ACTION());
 
-    setTimeout(() => {
-      if (auth.logged) {
-        router.push("/");
-      } else {
-        setAlert(true);
-      }
-    }, 2000);
+    if (auth.logged) {
+      router.push("/");
+    } else if (auth.error === true) {
+      setAlert(true);
+    }
   };
 
   const handelOnChange = (name, value) => {

@@ -1,37 +1,37 @@
 import actionTypes from "../../configs/actionTypes";
 
 const initialValue = {
-    user: null,
     loading: false,
-    logged: false,
+    courses: null,
+    loaded: false,
 };
 
-const loginReducer = (state = initialValue, action) => {
+const loadCourses = (state = initialValue, action) => {
     switch (action.type) {
-        case actionTypes.LOGIN_STARTED:
+        case actionTypes.LOAD_COURSES_STARTED:
             return {
                 ...state,
                 loading: action.loading,
-                logged: action.logged,
-                user: action.user,
+                loaded: action.loaded,
+                courses: action.courses,
             };
-        case actionTypes.LOGIN_SUCCES:
+        case actionTypes.LOAD_COURSES_SUCCES:
             return {
                 ...state,
                 loading: action.loading,
-                logged: action.logged,
-                user: action.user,
+                loaded: action.loaded,
+                courses: action.courses,
             };
-        case actionTypes.LOGIN_FAILD:
+        case actionTypes.LOAD_COURSES_FAILD:
             return {
                 ...state,
 
                 loading: action.loading,
-                logged: action.logged,
+                loaded: action.loaded,
                 Error: action.error,
             };
         default:
             return state;
     }
 };
-export default loginReducer;
+export default loadCourses;

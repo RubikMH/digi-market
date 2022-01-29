@@ -11,17 +11,17 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <ThemeProvider theme={Theme}>
         <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+          <Component {...pageProps} />{" "}
+        </Layout>{" "}
+      </ThemeProvider>{" "}
     </Provider>
   );
 }
-MyApp.getInitialProps = async (appContext) => {
-  appContext.ctx.reduxStore = store;
+// MyApp.getInitialProps = async (appContext) => {
+//   appContext.ctx.reduxStore = store;
 
-  const pageProps = await App.getInitialProps(appContext);
-  return { ...pageProps };
-};
+//   const pageProps = await App.getInitialProps(appContext);
+//   return { ...pageProps };
+// };
 
 export default MyApp;

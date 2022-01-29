@@ -19,7 +19,7 @@ const Navbar = () => {
           <Li>خانه</Li>
         </HyperLink>
         <HyperLink href={`/courses`}>
-          <Li>درهای آموزشی</Li>
+          <Li>دوره های آموزشی</Li>
         </HyperLink>
         <HyperLink href={`/blogs`}>
           <Li>بلاک ها</Li>
