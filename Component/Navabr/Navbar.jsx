@@ -2,10 +2,11 @@ import React from "react";
 import HyperLink from "../HyperLink/HyperLink";
 import Li from "../Li/Li";
 import { css, cx } from "@emotion/css";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div>
+    <nav>
       <ul
         className={css`
           display: flex;
@@ -15,20 +16,28 @@ const Navbar = () => {
           align-items: center;
         `}
       >
-        <HyperLink href={`/`}>
-          <Li>خانه</Li>
-        </HyperLink>
-        <HyperLink href={`/courses`}>
-          <Li>دوره های آموزشی</Li>
-        </HyperLink>
-        <HyperLink href={`/blogs`}>
-          <Li>بلاک ها</Li>
-        </HyperLink>
-        <HyperLink href={`/about-us`}>
-          <Li>درباره ما</Li>
-        </HyperLink>
+        <Link href={`/`}>
+          <a>
+            <Li>خانه</Li>
+          </a>
+        </Link>
+        <Link href={`/courses`}>
+          <a>
+            <Li>دوره های آموزشی</Li>
+          </a>
+        </Link>
+        <Link href={`/blogs`}>
+          <a>
+            <Li>بلاک ها</Li>
+          </a>
+        </Link>
+        <Link href={`/about-us`}>
+          <a>
+            <Li>درباره ما</Li>
+          </a>
+        </Link>
       </ul>
-    </div>
+    </nav>
   );
 };
 export default Navbar;

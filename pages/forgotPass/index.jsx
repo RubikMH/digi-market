@@ -3,12 +3,10 @@ import Head from "next/head";
 import { css, cx } from "@emotion/css";
 import H2 from "../../Component/Typography/H2";
 import InputEmail from "../../Component/InputEmail";
-import InputPassword from "../../Component/InputPassword";
 import Button from "../../Component/Button";
 import FormContorol from "../../Component/FormContorol/FormContorol";
 import Space from "../../Component/Typography/Space";
 import Link from "next/link";
-import HyperLink from "../../Component/Hyperlink/HyperLink";
 
 const ForgotPass = () => {
   const [valueFrom, setValueFrom] = useState({});
@@ -72,14 +70,14 @@ const ForgotPass = () => {
           </FormContorol>
         </form>
         <div>
-          <HyperLink href="/login" borderBottom>
-            وارد شوید
-          </HyperLink>
+          <Link href="/login" borderBottom>
+            <a> وارد شوید</a>
+          </Link>
         </div>
         <div>
-          <HyperLink href="/register" borderBottom>
-            ثبت نام
-          </HyperLink>
+          <Link href="/register" borderBottom>
+            <a> ثبت نام</a>
+          </Link>
         </div>
       </div>
     </>

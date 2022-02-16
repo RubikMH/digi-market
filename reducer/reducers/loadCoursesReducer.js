@@ -2,7 +2,7 @@ import actionTypes from "../../configs/actionTypes";
 
 const initialValue = {
     loading: false,
-    courses: null,
+    courses: [],
     loaded: false,
 };
 

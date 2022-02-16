@@ -3,6 +3,7 @@ import Reset from "../Containers/Reset/Reset";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
+    // console.log(initialProps);
     return { ...initialProps };
   }
 
@@ -14,7 +15,7 @@ class MyDocument extends Document {
           <Reset />
           <Main />
           <NextScript />
-        </body>
+        </body>{" "}
       </Html>
     );
   }

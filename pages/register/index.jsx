@@ -10,7 +10,7 @@ import FormContorol from "../../Component/FormContorol/FormContorol";
 import Space from "../../Component/Typography/Space";
 import InputText from "../../Component/InputText/InputText";
 import { useDispatch } from "react-redux";
-import HyperLink from "../../Component/Hyperlink/HyperLink";
+import Link from "next/link";
 
 const Register = () => {
   const router = useRouter();
@@ -98,9 +98,9 @@ const Register = () => {
           </FormContorol>
         </form>
         <div>
-          <HyperLink href="/login" borderBottom>
-            وارد شوید
-          </HyperLink>
+          <Link href="/login" borderBottom>
+            <a>وارد شوید</a>
+          </Link>
         </div>
       </div>
     </>

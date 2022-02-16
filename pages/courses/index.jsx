@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { css, cx } from "@emotion/css";
 import Head from "next/head";
 import CardList from "../../Component/CardList/CardList";
-
+import { LOAD_COURSES_ACTION } from "../../actions";
 import { useSelector } from "react-redux";
+import contentful from "../../helpers/contentful";
+import Link from "next/link";
 
 const Courses = () => {
-  const courses = useSelector((state) => state.courses);
-  console.log(courses.courses);
+  // console.log(props);
+  const { courses } = useSelector((state) => state.courses);
+  // console.log("courses", courses);
+  // console.log("props", props);
 
   return (
     <>
@@ -22,10 +26,17 @@ const Courses = () => {
           width: 100%;
         `}
       >
-        <CardList courses={courses.courses} />
+        <CardList courses={courses} />
       </div>
     </>
   );
+};
+Courses.getInitialProps = async ({ reduxStore }) => {
+  // console.log("reduxStore", reduxStore);
+  await reduxStore.dispatch(LOAD_COURSES_ACTION());
+  // const { courses } = await reduxStore.getState();
+
+  return {};
 };
 
 export default Courses;

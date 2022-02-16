@@ -5,12 +5,14 @@ import styles from "../styles/Home.module.css";
 import getApi from "../utils/getApi";
 import { css, cx } from "@emotion/css";
 import store from "../configs/store";
+import contentful from "../helpers/contentful";
 import { LOAD_COURSES_ACTION } from "../actions";
+import { useState } from "react";
 
-const Home = () => {
-  useEffect(() => {
-    store.dispatch(LOAD_COURSES_ACTION());
-  }, []);
+const Home = ({ props }) => {
+  const courses = props;
+  console.log("courses", courses);
+
   return (
     <div
       className={css`
@@ -41,7 +43,13 @@ const Home = () => {
 
 // Home.getInitialProps = async ({ reduxStore }) => {
 //   // console.log("reduxStore", reduxStore);
-//   return {};
+//   await reduxStore.dispatch(LOAD_COURSES_ACTION());
+//   const { courses } = reduxStore.getState();
+//   console.log("courses", courses);
+
+//   return {
+//     courses,
+//   };
 // };
 
 export default Home;

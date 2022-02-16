@@ -8,13 +8,11 @@ import HyperLink from "../../HyperLink/HyperLink";
 import Space from "../../Typography/Space";
 import Navbar from "../../Navabr/Navbar";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Header = () => {
   const { user } = useSelector((state) => state.login);
-  console.log(user);
-  const handelMode = (e) => {
-    console.log("changhe");
-  };
+  // console.log(user);
 
   const theme = useTheme();
 
@@ -58,16 +56,18 @@ const Header = () => {
                 margin: 10px;
               `}
             >
-              <HyperLink href={`/user`}>
-                <img
-                  src="user.png"
-                  alt="user"
-                  className={css`
-                    width: 60px;
-                    padding-left: 7px;
-                  `}
-                />
-              </HyperLink>
+              <Link href={`/user`}>
+                <a>
+                  <img
+                    src="user.png"
+                    alt="user"
+                    className={css`
+                      width: 60px;
+                      padding-left: 7px;
+                    `}
+                  />
+                </a>
+              </Link>
             </div>
           ) : (
             <>
@@ -77,9 +77,11 @@ const Header = () => {
                   margin: 10px;
                 `}
               >
-                <HyperLink href={`/login`}>
-                  <Button primary>ورود </Button>
-                </HyperLink>
+                <Link href={`/login`}>
+                  <a>
+                    <Button primary>ورود </Button>
+                  </a>
+                </Link>
               </div>
               <div
                 className={css`
@@ -88,9 +90,11 @@ const Header = () => {
                   margin-left: 20px;
                 `}
               >
-                <HyperLink href={`/register`}>
-                  <Button>ثبت نام </Button>
-                </HyperLink>
+                <Link href={`/register`}>
+                  <a>
+                    <Button>ثبت نام </Button>
+                  </a>
+                </Link>
               </div>
             </>
           )}

@@ -1,4 +1,5 @@
 import actionTypes from "../configs/actionTypes";
+import contentful from "../helpers/contentful";
 import fetchUrl from "../utils/fetchUrl";
 
 const LOGIN_ACTION = () => {
@@ -33,27 +34,28 @@ const LOGIN_ACTION = () => {
         }
     };
 };
+//---------------------------------------------------------------------------------
 const LOAD_COURSES_ACTION = () => {
     return async(dispatch) => {
         dispatch({
             type: actionTypes.LOAD_COURSES_STARTED,
             loading: true,
             loaded: false,
-            courses: {},
+            courses: [],
         });
         try {
-            setTimeout(async() => {
-                const { courses } = await fetchUrl({
-                    url: "http://127.0.0.1:5000/courses.json",
-                    method: "GET",
+            contentful
+                .getEntries({
+                    content_type: "cardShop",
+                })
+                .then((result) => {
+                    dispatch({
+                        type: actionTypes.LOAD_COURSES_SUCCES,
+                        loading: false,
+                        courses: result.items,
+                        loaded: true,
+                    });
                 });
-                dispatch({
-                    type: actionTypes.LOAD_COURSES_SUCCES,
-                    loading: false,
-                    courses: courses,
-                    loaded: true,
-                });
-            }, 2000);
         } catch (error) {
             console.error("error", error);
             dispatch({

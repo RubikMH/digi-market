@@ -9,7 +9,7 @@ import Button from "../../Component/Button";
 import FormContorol from "../../Component/FormContorol/FormContorol";
 import { useDispatch, useSelector } from "react-redux";
 import Space from "../../Component/Typography/Space";
-import HyperLink from "../../Component/Hyperlink/HyperLink";
+import Link from "next/link";
 import { LOGIN_ACTION } from "../../actions/index";
 import store from "../../configs/store";
 import Alert from "../../Component/Alert/Alert";
@@ -17,7 +17,7 @@ import Alert from "../../Component/Alert/Alert";
 export default function Login() {
   const [alert, setAlert] = useState(false);
   const auth = useSelector((state) => state.login);
-  console.log(auth);
+  console.log("auth", auth);
   // const dispatch = useDispatch();
   const router = useRouter();
   const [valueFrom, setValueFrom] = useState({});
@@ -79,6 +79,7 @@ export default function Login() {
               placeholder="ایمیل خود را وارد کنید"
               autoFocus
               onChange={(value) => handelOnChange("Email", value)}
+              required
             />
           </FormContorol>
           <Space />
@@ -86,6 +87,7 @@ export default function Login() {
             <InputPassword
               placeholder="کلمه عبور خود را وارد کنید"
               onChange={(value) => handelOnChange("Password", value)}
+              required
             />
           </FormContorol>
           <Space />
@@ -97,14 +99,14 @@ export default function Login() {
           <Alert Alert={alert}>ایمیل یا کلمه عبور اشتباه است</Alert>
         </form>
         <div>
-          <HyperLink href="/register" borderBottom>
-            ثبت نام
-          </HyperLink>
+          <Link href="/register">
+            <a>ثبت نام</a>
+          </Link>
         </div>
         <div>
-          <HyperLink href="/forgotPass" borderBottom>
-            بازیابی کلمه عبور
-          </HyperLink>
+          <Link href="/forgotPass">
+            <a>بازیابی کلمه عبور</a>
+          </Link>
         </div>
       </div>
     </>
