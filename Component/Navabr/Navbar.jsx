@@ -17,22 +17,46 @@ const Navbar = () => {
         `}
       >
         <Link href={`/`}>
-          <a>
+          <a
+            className={css`
+              text-decoration: none;
+              color: black;
+              cursor: pointer;
+            `}
+          >
             <Li>خانه</Li>
           </a>
         </Link>
         <Link href={`/courses`}>
-          <a>
+          <a
+            className={css`
+              text-decoration: none;
+              color: black;
+              cursor: pointer;
+            `}
+          >
             <Li>دوره های آموزشی</Li>
           </a>
         </Link>
         <Link href={`/blogs`}>
-          <a>
+          <a
+            className={css`
+              text-decoration: none;
+              color: black;
+              cursor: pointer;
+            `}
+          >
             <Li>بلاک ها</Li>
           </a>
         </Link>
         <Link href={`/about-us`}>
-          <a>
+          <a
+            className={css`
+              text-decoration: none;
+              color: black;
+              cursor: pointer;
+            `}
+          >
             <Li>درباره ما</Li>
           </a>
         </Link>

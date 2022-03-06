@@ -9,6 +9,7 @@ const HyperLink = ({ href, children }) => {
         className={css`
           text-decoration: none;
           cursor: pointer;
+          color: black;
         `}
       >
         {children}

@@ -9,10 +9,7 @@ import contentful from "../helpers/contentful";
 import { LOAD_COURSES_ACTION } from "../actions";
 import { useState } from "react";
 
-const Home = ({ props }) => {
-  const courses = props;
-  console.log("courses", courses);
-
+const Home = () => {
   return (
     <div
       className={css`

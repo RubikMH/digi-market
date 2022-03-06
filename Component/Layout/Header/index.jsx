@@ -28,7 +28,7 @@ const Header = () => {
           align-items: center;
           width: 100%;
           padding-top: 10px;
-          height: 80px;
+          height: 10vh;
         `}
       >
         <div

@@ -2,7 +2,6 @@ import React from "react";
 import Card from "../Card/Card";
 import { css, cx } from "@emotion/css";
 import Link from "next/link";
-import HyperLink from "../HyperLink/HyperLink";
 
 const CardList = ({ courses }) => {
   // let listCard = [];
@@ -31,25 +30,22 @@ const CardList = ({ courses }) => {
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
+        max-width: 70vw;
       `}
     >
       {listCard ? (
         listCard.map((card) => (
-          <HyperLink
-            key={`URL_${card.sys.id}`}
-            href={{
-              pathname: "/courses/[id]",
-              query: { id: `${card.sys.id}` },
-            }}
-          >
-            <Card
-              key={`Card_${card.sys.id}`}
-              title={card.fields.titleProduct}
-              src={`${card.fields.imgCard.fields.file.url}`}
-              price={card.fields.price}
-              width={90}
-            />
-          </HyperLink>
+          <Card
+            id={card.sys.id}
+            key={`Card_${card.sys.id}`}
+            title={card.fields.titleProduct}
+            src={`${card.fields.imgCard.fields.file.url}`}
+            price={card.fields.price}
+            // width={50}
+            // height={100}
+            score={card.fields.score}
+            numberOfPurchases={card.fields.numberOfPurchases}
+          />
         ))
       ) : (
         <></>

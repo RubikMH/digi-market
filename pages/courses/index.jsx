@@ -24,6 +24,7 @@ const Courses = () => {
         className={css`
           display: flex;
           width: 100%;
+          justify-content: center;
         `}
       >
         <CardList courses={courses} />
@@ -32,9 +33,10 @@ const Courses = () => {
   );
 };
 Courses.getInitialProps = async ({ reduxStore }) => {
-  // console.log("reduxStore", reduxStore);
+  // console.log("reduxStore", reduxStore.getState());
   await reduxStore.dispatch(LOAD_COURSES_ACTION());
   // const { courses } = await reduxStore.getState();
+  // console.log(courses);
 
   return {};
 };
