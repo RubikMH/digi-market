@@ -31,8 +31,12 @@ const Card = ({
         // max-width: 30vw;
         padding-bottom: 10px;
         border-radius: 20px;
+        transition: all 0.5s;
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
           rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        &:hover {
+          transform: translateY(-5px);
+        }
       `}
     >
       <img
@@ -46,7 +50,7 @@ const Card = ({
       />
       <HyperLink
         href={{
-          pathname: "/courses/[id]",
+          pathname: "/Courses/[id]",
           query: { id: `${id}` },
         }}
       >
@@ -113,10 +117,10 @@ const Card = ({
               &:hover {
                 box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
                   rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-                background-color: rgba(0, 140, 255, 0.78);
+                background-color: rgba(179, 222, 230, 0.78);
                 transform: translateY(10px);
               }
-              border: 2px solid black;
+              border: 1px solid black;
             `}
           >
             اضافه کردن به سبد

@@ -27,7 +27,7 @@ const Navbar = () => {
             <Li>خانه</Li>
           </a>
         </Link>
-        <Link href={`/courses`}>
+        <Link href={`/Courses`}>
           <a
             className={css`
               text-decoration: none;

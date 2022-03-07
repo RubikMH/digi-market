@@ -23,10 +23,17 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
+// static async getInitialProps({ Component, ctx}) {
+//   return {
+//   pageProps: Component.getInitialProps ? await Component.getInitialProps(ctx): {}
+//    };
+//   }
+
 MyApp.getInitialProps = async (appContext) => {
   appContext.ctx.reduxStore = store;
 
   const pageProps = await App.getInitialProps(appContext);
+  // console.log("App", App);
 
   return {
     ...pageProps,
