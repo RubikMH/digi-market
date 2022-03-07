@@ -9,6 +9,7 @@ import contentful from "../helpers/contentful";
 import { LOAD_COURSES_ACTION } from "../actions";
 import { useState } from "react";
 import Link from "next/link";
+import CardInfo from "../Component/CardInfo";
 
 const Home = () => {
   return (
@@ -48,6 +49,9 @@ const Home = () => {
             </div>
           </div>{" "}
         </div>
+      </div>
+      <div>
+        <CardInfo />
       </div>
     </>
   );
