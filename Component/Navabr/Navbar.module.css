@@ -1,0 +1,31 @@
+@keyframes itemNav {
+    from {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.li_nav {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    padding: 5px 15px;
+    border-radius: 13px;
+}
+
+.li_nav:hover {
+    animation: itemNav 1.2s;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: forward;
+    transition: all ease-in-out;
+    background-color: #43cad9;
+}

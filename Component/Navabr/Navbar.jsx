@@ -3,6 +3,7 @@ import HyperLink from "../HyperLink/HyperLink";
 import Li from "../Li/Li";
 import { css, cx } from "@emotion/css";
 import Link from "next/link";
+import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
@@ -24,7 +25,7 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <Li>خانه</Li>
+            <li className={styles.li_nav}>خانه</li>
           </a>
         </Link>
         <Link href={`/Courses`}>
@@ -35,7 +36,7 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <Li>دوره های آموزشی</Li>
+            <li className={styles.li_nav}>دوره های آموزشی</li>
           </a>
         </Link>
         <Link href={`/blogs`}>
@@ -46,7 +47,7 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <Li>بلاک ها</Li>
+            <li className={styles.li_nav}>بلاک ها</li>
           </a>
         </Link>
         <Link href={`/about-us`}>
@@ -57,7 +58,7 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <Li>درباره ما</Li>
+            <li className={styles.li_nav}>درباره ما</li>
           </a>
         </Link>
       </ul>
