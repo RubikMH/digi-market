@@ -50,9 +50,8 @@ const Home = () => {
           </div>{" "}
         </div>
       </div>
-      <div>
-        <CardInfo />
-      </div>
+
+      <CardInfo />
     </>
   );
 };

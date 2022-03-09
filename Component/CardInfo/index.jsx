@@ -1,7 +1,7 @@
-import React from "react";
-import styles from "./CardInfo.module.css";
-import H4 from "../Typography/H4";
-import H3 from "../Typography/H3";
+import React from 'react'
+import styles from './CardInfo.module.css'
+import H4 from '../Typography/H4'
+import H3 from '../Typography/H3'
 
 const CardInfo = () => {
   return (
@@ -11,7 +11,7 @@ const CardInfo = () => {
           <H3>خدمات ما</H3>
         </div>
         <div className={styles.content}>
-          {" "}
+          {' '}
           <div className={`${styles.main} ${styles.class_1}`}>
             <div className={styles.heading}>
               <img src="MyService.png" alt="MyService.png" />
@@ -54,7 +54,7 @@ const CardInfo = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CardInfo;
+export default CardInfo
