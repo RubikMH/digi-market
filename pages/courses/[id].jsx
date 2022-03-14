@@ -3,8 +3,14 @@ import { useRouter } from "next/dist/client/router";
 import { useSelector } from "react-redux";
 import Head from "next/head";
 
+import { css, cx } from "@emotion/css";
+
 const coursePage = () => {
-  const [course, setCourses] = useState("");
+  // const [course, setCourses] = useState("");
+  const [Img, setImg] = useState("");
+  const [Contennt, setContennt] = useState([]);
+  const [body, setBody] = useState([]);
+
   const [title, setTitle] = useState("");
   const { courses } = useSelector((state) => state.courses);
   const { query } = useRouter();
@@ -12,8 +18,13 @@ const coursePage = () => {
   const getCourse = (arr, id) => {
     arr.map((element) => {
       if (element.sys.id == id) {
-        setCourses(element);
+        // setCourses(element);
         setTitle(element.fields.titleProduct);
+        setImg(element.fields.imgCard.fields.file.url);
+        setContennt(element.fields.aboutProduct.content);
+        // if (body !== []) {
+        //   setBody(body.map((item) => item.content));
+        // }
       }
     });
   };
@@ -21,7 +32,10 @@ const coursePage = () => {
     getCourse(courses, id);
   }, []);
 
-  console.log(course);
+  // console.log(
+  //   "body",
+  //   Contennt.map((item) => item.content[0])
+  // );
 
   return (
     <>
@@ -31,7 +45,38 @@ const coursePage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div></div>
+      <div className="flex flex-row h-screen  mt-5 ">
+        <div className=" w-2/6 flex justify-center">
+          <div className=" w-3/6 bg-green-200 rounded-md h-5/6 p-10 overflow-auto ">
+            <h3 className="text-2xl font-bold  ">سر فصل ها</h3>
+            <div className="m-2 justify-center flex flex-wrap flex-row ">
+              <p className="m-1 ">آموزش کامپوننت ها </p>
+              <hr className=" bg-black opacity-100" />
+              <p className=" m-1">آموزش پراپس</p>
+            </div>
+          </div>
+        </div>
+        <div className="w-4/6  h-5/6  ">
+          <div className=" bg-green-200 h-full w-5/6  rounded-md overflow-y-scroll">
+            <div>
+              <img src={Img} alt={title} className=" p-2 rounded-3xl" />
+            </div>
+            <div className=" m-3">
+              <h3 className="text-3xl font-bold  ">{title}</h3>
+            </div>
+            <div>
+              {Contennt.map((item) => (
+                <p
+                  className="m-6 indent-4 "
+                  key={Math.floor(Math.random() * 101)}
+                >
+                  {item.content[0].value}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

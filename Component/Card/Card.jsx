@@ -10,44 +10,25 @@ const Card = ({
   title,
   price,
   width = 100,
-  height = 200,
+  height = 100,
   numberOfPurchases,
   score,
   id,
 }) => {
   return (
     <div
-      className={css`
-        padding-top: 0px;
-        max-width: 20vw;
-        // height: 5vh;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        align-content: center;
-        justify-content: flex-end;
-        margin: 30px;
-        // max-width: 30vw;
-        padding-bottom: 10px;
-        border-radius: 20px;
-        transition: all 0.5s;
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-          rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-        &:hover {
-          transform: translateY(-5px);
-        }
-      `}
+      className="flex min-w-xs w-1/4 p-0 flex-col flex-nowrap items-center content-center justify-end m-6  
+      pb-3 md:transition-all  rounded-md  delay-75 shadow-xl hover:shadow-2xl hover:-translate-y-2 border-2 "
     >
-      <img
-        src={src}
-        alt={title}
-        width={`${width}%`}
-        height={`${height}px`}
-        className={css`
-          border-radius: 20px 20px 0 0;
-        `}
-      />
+      <div className=" h-48 w-full">
+        <img
+          src={src}
+          alt={title}
+          width={`${width}%`}
+          height={`${height}%`}
+          className="rounded-md h-full w-full "
+        />
+      </div>
       <HyperLink
         href={{
           pathname: "/Courses/[id]",
@@ -60,12 +41,13 @@ const Card = ({
         className={css`
           width: 100%;
         `}
+      ></div>
+      <div
+        className={css`
+          width: 100%;
+        `}
       >
-        <hr
-          className={css`
-            opacity: 0.2;
-          `}
-        />
+        <hr className=" opacity-80" />
       </div>
       <div
         className={css`
@@ -73,14 +55,9 @@ const Card = ({
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          position: relative;
         `}
       >
-        <span
-          className={css`
-            margin-right: 20px;
-          `}
-        >
+        <div className=" flex justify-center flex-row m-1">
           <img
             src="programmer.png"
             alt="programmer.png"
@@ -92,55 +69,27 @@ const Card = ({
             `}
           />
           {convertInt(numberOfPurchases)}
-        </span>
+        </div>
         <div
           className={css`
             display: flex;
             justify-content: center;
             align-items: stretch;
             flex-wrap: wrap;
-        }
-        `}
-        >
-          <button
-            className={css`
-              cursor: pointer;
-              padding: 0.5rem;
-              border-radius: 25px;
-              position: absolute;
-              top: 2rem;
-              width: 10rem;
-              display: flex;
-              justify-content: space-evenly;
-              background-color: white;
-              transition: all 0.5s;
-              &:hover {
-                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-                  rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-                background-color: rgba(179, 222, 230, 0.78);
-                transform: translateY(10px);
-              }
-              border: 1px solid black;
-            `}
-          >
-            اضافه کردن به سبد
-            <img
-              src="plus.png"
-              alt="plus.png"
-              width={`20px`}
-              className={css`
-                // margin-top: 5px;
-              `}
-            />
-          </button>
-        </div>
-        <span
-          className={css`
-            margin-left: 20px;
+            position: relative;
           `}
         >
-          {`${convertInt(price)} تومان`}
-        </span>
+          <button
+            className="flex w-40 top-8 absolute rounded-md  justify-evenly p-2 
+          bg-white transition-all duration-150 border-2 delay-75 hover:shadow-md
+          hover:bg-blue-200 hover:translate-y-3 text-sm active:bg-slate-400"
+          >
+            افزودن به سبد خرید
+          </button>
+        </div>
+        <div className=" flex justify-center flex-row m-1">
+          <span>{`${convertInt(price)} تومان`}</span>
+        </div>
       </div>
     </div>
   );

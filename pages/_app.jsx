@@ -6,7 +6,7 @@ import Theme from "../configs/theme";
 import createMyStore from "../configs/store";
 import Layout from "../Component/Layout";
 import { useTheme, ThemeProvider, withTheme } from "@emotion/react";
-
+import "../styles/global.css";
 const store = createMyStore();
 
 const MyApp = ({ Component, pageProps }) => {

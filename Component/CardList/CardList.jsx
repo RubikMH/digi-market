@@ -23,16 +23,7 @@ const CardList = ({ courses }) => {
   // ];
   // console.log("listCard", listCard);
   return (
-    <div
-      className={css`
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        max-width: 70vw;
-      `}
-    >
+    <div className=" flex flex-row flex-wrap justify-center content-center w-5/6">
       {listCard ? (
         listCard.map((card) => (
           <Card
@@ -41,8 +32,6 @@ const CardList = ({ courses }) => {
             title={card.fields.titleProduct}
             src={`${card.fields.imgCard.fields.file.url}`}
             price={card.fields.price}
-            // width={50}
-            // height={100}
             score={card.fields.score}
             numberOfPurchases={card.fields.numberOfPurchases}
           />

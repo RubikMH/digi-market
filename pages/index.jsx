@@ -60,7 +60,7 @@ Home.getInitialProps = async ({ reduxStore }) => {
   // console.log("reduxStore", reduxStore);
   await reduxStore.dispatch(LOAD_COURSES_ACTION());
   const { courses } = reduxStore.getState();
-  // console.log("courses", courses);
+  //   console.log("courses", courses);
 
   return {
     courses,
