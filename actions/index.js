@@ -67,5 +67,14 @@ const LOAD_COURSES_ACTION = () => {
         }
     };
 };
+//----------------------------------------------------------------------------------
+const ADD_COURSES_ACTION = (course) => {
+    return async(dispatch) => {
+        dispatch({
+            type: actionTypes.ADD_COURSES_SUCCES,
+            payload: { add: true, courses: course },
+        });
+    };
+};
 
-export { LOGIN_ACTION, LOAD_COURSES_ACTION };
+export { LOGIN_ACTION, LOAD_COURSES_ACTION, ADD_COURSES_ACTION };

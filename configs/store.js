@@ -5,7 +5,7 @@ import thunk from "redux-thunk";
 import rootReducer from "../reducer/rootReducer";
 
 const composeEnhancers = composeWithDevTools({
-    name: "jobb",
+    name: "COURSES",
 });
 
 const createMyStore = () => {

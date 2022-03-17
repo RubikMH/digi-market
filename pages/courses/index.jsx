@@ -2,16 +2,20 @@ import React, { useState, useEffect } from "react";
 import { css, cx } from "@emotion/css";
 import Head from "next/head";
 import CardList from "../../Component/CardList/CardList";
-import { LOAD_COURSES_ACTION } from "../../actions";
+import { ADD_COURSES_ACTION } from "../../actions";
 import { useSelector } from "react-redux";
 import contentful from "../../helpers/contentful";
 import Link from "next/link";
 import H3 from "../../Component/Typography/H3";
-const Courses = () => {
+const Courses = (props) => {
   // console.log(props);
-  const { courses } = useSelector((state) => state.courses);
+  // const { courses } = useSelector((state) => state.courses);
   // console.log("courses", courses);
   // console.log("props", props);
+  // const courses = props;
+  useEffect(async () => {
+    await ADD_COURSES_ACTION();
+  }, []);
 
   return (
     <>
@@ -40,18 +44,29 @@ const Courses = () => {
           padding: 0 2rem;
         `}
       >
-        <CardList courses={courses} />
+        <CardList courses={props.post} />
       </div>
     </>
   );
 };
-Courses.getInitialProps = async ({ reduxStore }) => {
-  // console.log("reduxStore", reduxStore.getState());
-  await reduxStore.dispatch(LOAD_COURSES_ACTION());
-  // const { courses } = await reduxStore.getState();
-  // console.log(courses);
+// Courses.getInitialProps = async ({ reduxStore }) => {
+//   // console.log("reduxStore", reduxStore.getState());
+//   await reduxStore.dispatch(LOAD_COURSES_ACTION());
+//   // const { courses } = await reduxStore.getState();
+//   // console.log(courses);
 
-  return {};
+//   return {};
+// };
+export const getServerSideProps = async () => {
+  const post = await contentful
+    .getEntries({
+      content_type: "cardShop",
+    })
+    .then((result) => {
+      return result.items;
+    });
+
+  return { props: { post } };
 };
 
 export default Courses;

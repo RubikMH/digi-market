@@ -4,17 +4,11 @@ import { css, cx } from "@emotion/css";
 import Button from "../Button";
 import convertInt from "../../helpers/convertInt";
 import HyperLink from "../HyperLink/HyperLink";
+import { ADD_COURSES_ACTION } from "../../actions/index";
+import { useDispatch } from "react-redux";
 
-const Card = ({
-  src,
-  title,
-  price,
-  width = 100,
-  height = 100,
-  numberOfPurchases,
-  score,
-  id,
-}) => {
+const Card = ({ card, height = 100, width = 100 }) => {
+  const dispatch = useDispatch();
   return (
     <div
       className="flex min-w-xs w-1/4 p-0 flex-col flex-nowrap items-center content-center justify-end m-6  
@@ -22,8 +16,8 @@ const Card = ({
     >
       <div className=" h-48 w-full">
         <img
-          src={src}
-          alt={title}
+          src={card.fields.imgCard.fields.file.url}
+          alt={card.fields.titleProduct}
           width={`${width}%`}
           height={`${height}%`}
           className="rounded-md h-full w-full "
@@ -31,17 +25,12 @@ const Card = ({
       </div>
       <HyperLink
         href={{
-          pathname: "/Courses/[id]",
-          query: { id: `${id}` },
+          pathname: "/courses/[id]",
+          query: { id: `${card.sys.id}` },
         }}
       >
-        <H5>{title}</H5>
+        <H5>{card.fields.titleProduct}</H5>
       </HyperLink>
-      <div
-        className={css`
-          width: 100%;
-        `}
-      ></div>
       <div
         className={css`
           width: 100%;
@@ -68,7 +57,7 @@ const Card = ({
               margin-top: 0px;
             `}
           />
-          {convertInt(numberOfPurchases)}
+          {convertInt(card.fields.numberOfPurchases)}
         </div>
         <div
           className={css`
@@ -83,16 +72,29 @@ const Card = ({
             className="flex w-40 top-8 absolute rounded-md  justify-evenly p-2 
           bg-white transition-all duration-150 border-2 delay-75 hover:shadow-md
           hover:bg-blue-200 hover:translate-y-3 text-sm active:bg-slate-400"
+            onClick={() => dispatch(ADD_COURSES_ACTION(card))}
           >
             افزودن به سبد خرید
           </button>
         </div>
         <div className=" flex justify-center flex-row m-1">
-          <span>{`${convertInt(price)} تومان`}</span>
+          <span>{`${convertInt(card.fields.price)} تومان`}</span>
         </div>
       </div>
     </div>
   );
 };
+
+// const mapStateToProps = (state) => {
+//   return {
+//     courses: state.addCourses.courses,
+//     added: state.addCourses.add,
+//   };
+// };
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     ADD_COURSES_ACTION: () => dispatch(ADD_COURSES_ACTION()),
+//   };
+// };
 
 export default Card;

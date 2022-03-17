@@ -12,6 +12,7 @@ import Link from "next/link";
 import CardInfo from "../Component/CardInfo";
 
 const Home = () => {
+  // console.log(props);
   return (
     <>
       <Head>
@@ -40,7 +41,7 @@ const Home = () => {
                 <h4>پشتیبانی قدم به قدم | وبینار های رایگان </h4>
               </div>
               <div>
-                <Link href={`/Courses`}>
+                <Link href={`/courses`}>
                   <a>
                     <button className={styles.button}>همین الان شروع کن</button>
                   </a>
@@ -56,15 +57,15 @@ const Home = () => {
   );
 };
 
-Home.getInitialProps = async ({ reduxStore }) => {
-  // console.log("reduxStore", reduxStore);
-  await reduxStore.dispatch(LOAD_COURSES_ACTION());
-  const { courses } = reduxStore.getState();
-  //   console.log("courses", courses);
+// Home.getInitialProps = async ({ reduxStore }) => {
+//   // console.log("reduxStore", reduxStore);
+//   await reduxStore.dispatch(LOAD_COURSES_ACTION());
+//   const { courses } = reduxStore.getState();
+//   //   console.log("courses", courses);
 
-  return {
-    courses,
-  };
-};
+//   return {
+//     courses,
+//   };
+// };
 
 export default Home;

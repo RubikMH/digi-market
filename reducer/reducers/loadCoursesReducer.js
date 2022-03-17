@@ -6,7 +6,7 @@ const initialValue = {
     loaded: false,
 };
 
-const loadCourses = (state = initialValue, action) => {
+const loadCoursesReducer = (state = initialValue, action) => {
     switch (action.type) {
         case actionTypes.LOAD_COURSES_STARTED:
             return {
@@ -34,4 +34,4 @@ const loadCourses = (state = initialValue, action) => {
             return state;
     }
 };
-export default loadCourses;
+export default loadCoursesReducer;

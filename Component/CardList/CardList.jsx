@@ -6,7 +6,7 @@ import Link from "next/link";
 const CardList = ({ courses }) => {
   // let listCard = [];
 
-  const listCard = courses;
+  // const listCard = courses.post;
   // const listCard = [
   //   {
   //     id: 1,
@@ -21,26 +21,22 @@ const CardList = ({ courses }) => {
   //     card: "react ",
   //   },
   // ];
-  // console.log("listCard", listCard);
+
   return (
     <div className=" flex flex-row flex-wrap justify-center content-center w-5/6">
-      {listCard ? (
-        listCard.map((card) => (
-          <Card
-            id={card.sys.id}
-            key={`Card_${card.sys.id}`}
-            title={card.fields.titleProduct}
-            src={`${card.fields.imgCard.fields.file.url}`}
-            price={card.fields.price}
-            score={card.fields.score}
-            numberOfPurchases={card.fields.numberOfPurchases}
-          />
-        ))
-      ) : (
-        <></>
-      )}
+      {courses.map((card) => (
+        <Card card={card} key={`Card_${card.sys.id}`} />
+      ))}
     </div>
   );
 };
 
 export default CardList;
+
+// id={card.sys.id}
+//           key={`Card_${card.sys.id}`}
+//           title={card.fields.titleProduct}
+//           src={`${card.fields.imgCard.fields.file.url}`}
+//           price={card.fields.price}
+//           score={card.fields.score}
+//           numberOfPurchases={card.fields.numberOfPurchases}
