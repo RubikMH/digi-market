@@ -13,9 +13,6 @@ const Courses = (props) => {
   // console.log("courses", courses);
   // console.log("props", props);
   // const courses = props;
-  useEffect(async () => {
-    await ADD_COURSES_ACTION();
-  }, []);
 
   return (
     <>

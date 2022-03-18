@@ -9,6 +9,7 @@ import Space from "../../Typography/Space";
 import Navbar from "../../Navabr/Navbar";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import ShoppingCard from "../../ShoppingCard";
 
 const Header = () => {
   const { user } = useSelector((state) => state.login);
@@ -49,6 +50,11 @@ const Header = () => {
             align-items: baseline;
           `}
         >
+          <Link href={`/shopping`}>
+            <a>
+              <ShoppingCard />
+            </a>
+          </Link>
           {user ? (
             <div
               className={css`

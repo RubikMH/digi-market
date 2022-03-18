@@ -19,7 +19,7 @@ const coursePage = (props) => {
       </Head>
 
       <div className="flex flex-row h-screen  mt-5 ">
-        <div className=" w-2/6 flex justify-center">
+        <div className=" w-2/6 flex justify-center ">
           <div className=" w-3/6 bg-green-200 rounded-md h-5/6 p-10 overflow-auto ">
             <h3 className="text-2xl font-bold  ">سر فصل ها</h3>
             <div className="m-2 justify-center flex flex-wrap flex-row ">
