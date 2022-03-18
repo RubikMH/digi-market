@@ -71,7 +71,7 @@ const Card = ({ card, height = 100, width = 100 }) => {
           <button
             className="flex w-40 top-8 absolute rounded-md  justify-evenly p-2 
           bg-white transition-all duration-150 border-2 delay-75 hover:shadow-md
-          hover:bg-blue-200 hover:translate-y-3 text-sm active:bg-slate-400"
+          hover:bg-blue-200 hover:translate-y-1 text-sm active:bg-slate-400"
             onClick={() => dispatch(ADD_COURSES_ACTION(card))}
           >
             افزودن به سبد خرید
