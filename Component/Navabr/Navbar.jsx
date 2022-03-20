@@ -25,7 +25,9 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <li className={styles.li_nav}>خانه</li>
+            <li className="list-none cursor-pointer flex content-center justify-center items-stretch px-4 py-1 rounded-xl hover:animate-bounce hover:bg-blue-500 transition-all ease-in-out">
+              خانه
+            </li>
           </a>
         </Link>
         <Link href={`/courses`}>
@@ -36,7 +38,9 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <li className={styles.li_nav}>دوره های آموزشی</li>
+            <li className="list-none cursor-pointer flex content-center justify-center items-stretch px-4 py-1 rounded-xl hover:animate-bounce hover:bg-blue-500 transition-all ease-in-out ">
+              دوره های آموزشی
+            </li>
           </a>
         </Link>
         <Link href={`/blogs`}>
@@ -47,7 +51,9 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <li className={styles.li_nav}>بلاک ها</li>
+            <li className="list-none cursor-pointer flex content-center justify-center items-stretch px-4 py-1 rounded-xl hover:animate-bounce hover:bg-blue-500 transition-all ease-in-out ">
+              بلاک ها
+            </li>
           </a>
         </Link>
         <Link href={`/about-us`}>
@@ -58,7 +64,9 @@ const Navbar = () => {
               cursor: pointer;
             `}
           >
-            <li className={styles.li_nav}>درباره ما</li>
+            <li className="list-none cursor-pointer flex content-center justify-center items-stretch px-4 py-1 rounded-xl hover:animate-bounce hover:bg-blue-500 transition-all ease-in-out ">
+              درباره ما
+            </li>
           </a>
         </Link>
       </ul>

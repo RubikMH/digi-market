@@ -64,8 +64,6 @@ export const getServerSideProps = async (context) => {
   const myUrl = arr.split("=");
   const query = myUrl.slice(-1)[0];
 
-  // console.log(query);
-
   const data = await contentful
     .getEntries({
       content_type: "cardShop",

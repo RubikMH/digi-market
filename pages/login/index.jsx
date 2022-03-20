@@ -17,7 +17,6 @@ import Alert from "../../Component/Alert/Alert";
 export default function Login() {
   const [alert, setAlert] = useState(false);
   const auth = useSelector((state) => state.login);
-  console.log("auth", auth);
   // const dispatch = useDispatch();
   const router = useRouter();
   const [valueFrom, setValueFrom] = useState({});

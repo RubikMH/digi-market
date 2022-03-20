@@ -50,7 +50,7 @@ const Header = () => {
             align-items: baseline;
           `}
         >
-          <Link href={`/shopping`}>
+          <Link href={`/checkout`}>
             <a>
               <ShoppingCard />
             </a>
