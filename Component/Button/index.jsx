@@ -50,7 +50,7 @@ className={css`
     border-radius: ${theme.borderRadius[1]};
     display: inline-block;
     position: relative;
-    cursor: pointer;
+    cursor: pointer;  
     transition-duration: 0.4;
     &:hover {
       box-shadow: ${theme.boxShadow.light};
