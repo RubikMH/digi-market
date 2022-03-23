@@ -13,6 +13,7 @@ const Courses = (props) => {
   // console.log("courses", courses);
   // console.log("props", props);
   // const courses = props;
+  console.log("props", props);
 
   return (
     <>

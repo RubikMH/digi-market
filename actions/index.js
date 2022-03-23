@@ -72,9 +72,22 @@ const ADD_COURSES_ACTION = (course) => {
     return async(dispatch) => {
         dispatch({
             type: actionTypes.ADD_COURSES_SUCCES,
-            payload: { add: true, courses: course },
+            payload: { add: true, del: false, courses: course },
+        });
+    };
+};
+const DELETE_COURSES_ACTION = (course) => {
+    return async(dispatch) => {
+        dispatch({
+            type: actionTypes.DELETE_COURSES_SUCCES,
+            payload: { add: false, del: true, courses: course },
         });
     };
 };
 
-export { LOGIN_ACTION, LOAD_COURSES_ACTION, ADD_COURSES_ACTION };
+export {
+    LOGIN_ACTION,
+    LOAD_COURSES_ACTION,
+    ADD_COURSES_ACTION,
+    DELETE_COURSES_ACTION,
+};

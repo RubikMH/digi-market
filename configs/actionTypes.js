@@ -10,5 +10,8 @@ const actionTypes = {
     ADD_COURSES_STARTED: "ADD_COURSES_STARTED",
     ADD_COURSES_SUCCES: "ADD_COURSES_SUCCES",
     ADD_COURSES_FAILD: "ADD_COURSES_STARTED",
+    //----------------------------------
+
+    DELETE_COURSES_SUCCES: "DELETE_COURSES_SUCCES",
 };
 export default actionTypes;

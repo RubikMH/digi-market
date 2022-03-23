@@ -3,9 +3,10 @@ import H5 from "../Typography/H5";
 import { css, cx } from "@emotion/css";
 import Button from "../Button";
 import convertInt from "../../helpers/convertInt";
-import HyperLink from "../HyperLink/HyperLink";
+
 import { ADD_COURSES_ACTION } from "../../actions/index";
 import { useDispatch } from "react-redux";
+import HyperLink from "../HyperLink/HyperLink";
 
 const Card = ({ card, height = 100, width = 100 }) => {
   const dispatch = useDispatch();
